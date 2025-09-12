@@ -82,8 +82,8 @@ print(pd.__doc__)
 # $BROWSER https://pandas.pydata.org/docs/
 
 # 4. Using IPython/Jupyter magic commands (in a notebook or IPython shell)
-?pandas           # Shows summary documentation
-??pandas          # Shows detailed documentation including source code (if available)
+# ?pandas           # Shows summary documentation
+# ??pandas          # Shows detailed documentation including source code (if available)
 
 
 
