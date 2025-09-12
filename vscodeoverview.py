@@ -1,6 +1,11 @@
+# %%
+import pandas as pd
+#import simple_math
+# %%
 # %% [markdown]
 # ## Overview
-# This notebook provides an overview of the Visual Studio Code (VSCode) interface, focusing on its key features and functionalities.
+# This notebook provides an overview of the Visual Studio Code (VSCode) interface, focusing on its key 
+# features and functionalities.
 #
 # ## Key Features
 # - **Integrated Terminal**: VSCode includes a built-in terminal for running commands and scripts.
@@ -13,17 +18,76 @@
 # - **Activity Bar**: Located on the side, it provides access to different views like Explorer, Search, and Extensions.
 # - **Editor Area**: The central part of the interface where files are opened and edited.
 # - **Status Bar**: Displays information about the current project and file, including branch name and errors.
+
+# %% [markdown]
+# Overview of Python Packages
 #
 
-# %% [python]
+# A package in Python is a way of organizing related modules into a directory hierarchy.
+# It is simply a directory containing a special `__init__.py` file and one or more module files.
+#
+# Packages help structure code, promote reuse, and make it easier to maintain large projects.
+#
+# A module in Python is a file containing Python code (functions, classes, variables, etc.) 
+# that can be imported and used in other Python programs.
+#
+# Modules help organize code into reusable components. For example, `pandas` is a module that 
+# provides data analysis tools. You can create your own modules by saving Python code in 
+# a `.py` file and importing it using the `import` statement.
+
+# %%
+# Example: Creating a simple math module
+
+# Save the following code in a file named simple_math.py
+# simple_math.py
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+def subtract(a, b):
+    """Return the difference of a and b."""
+    return a - b
+
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
 def divide(a, b):
-    # This will raise a ZeroDivisionError if b is 0
+    """Return the quotient of a and b."""
+    if b == 0:
+        raise ValueError("Cannot divide by zero.")
     return a / b
 
-# Example usage that causes an error
-result = divide(10, 1)  # Debugger can be used here to inspect the error
-#to inspect the error
-result
+# %%
+# Example usage:
+
+print(simple_math.add(2, 3))
+print(simple_math.subtract(5, 2))   
+print(simple_math.multiply(4, 6))   
+print(simple_math.divide(10, 2))    
+
+
+# %%
+
+# Example: Accessing documentation for a package
+
+# 1. Using the built-in `help()` function
+help(pd)
+
+# 2. Using the `.__doc__` attribute
+print(pd.__doc__)
+
+# 3. Accessing online documentation
+# You can open the official pandas documentation in your browser:
+# $BROWSER https://pandas.pydata.org/docs/
+
+# 4. Using IPython/Jupyter magic commands (in a notebook or IPython shell)
+?pandas           # Shows summary documentation
+??pandas          # Shows detailed documentation including source code (if available)
+
+
+
+# %%
 
 # ### Difference between Python script, IPython, and Jupyter Notebook
 
@@ -43,7 +107,43 @@ result
 # writing and running code in cells. Notebooks (`.ipynb` files) 
 # support mixing code, markdown, and rich outputs (plots, images).
 # They are ideal for data exploration, visualization, and sharing results.
+
 # %%
+# Four different ways to load data in Python
+
+# 1. Using pandas to read a CSV file from a URL
+df_csv_url = pd.read_csv("https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv")
+
+# 2. Using pandas to read a local CSV file
+# df_csv_local = pd.read_csv("local_titanic.csv")  # Uncomment and provide path to use
+
+# 3. Using pandas to read from an Excel file
+# df_excel = pd.read_excel("local_titanic.xlsx")  # Uncomment and provide path to use
+
+# 4. Using pandas to read from a SQL database
+# import sqlite3
+# conn = sqlite3.connect("titanic.db")
+# df_sql = pd.read_sql_query("SELECT * FROM passengers", conn)
+# conn.close()
+
+
+
+# %%
+# Example: Using Data Wrangler in VSCode
+
+# Load a complex dataset: Titanic passenger data
+df = pd.read_csv("https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv")
+
+# Preview the data
+print(df.head())
+
+
+# %% 
+
+
+
+
+
 
 
 
