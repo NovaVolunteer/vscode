@@ -1,7 +1,7 @@
 # %%
 import pandas as pd
 import math
-# import simple_math # (Assuming simple_math.py is in the same directory)
+import simple_math # (Assuming simple_math.py is in the same directory)
 import plotly.express as px
 import numpy as np
 import statsmodels
