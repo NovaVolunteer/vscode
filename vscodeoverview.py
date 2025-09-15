@@ -1,6 +1,19 @@
 # %%
 import pandas as pd
+import math
 #import simple_math
+# %%
+# Small Python script example: Calculate the area of a circle
+
+def area_of_circle(radius):
+    """Return the area of a circle given its radius."""
+    return math.pi * radius ** 2
+
+if __name__ == "__main__":
+    r = 50
+    print(f"Area of circle with radius {r}: {area_of_circle(r):.2f}")
+
+
 # %%
 # %% [markdown]
 # ## Overview
