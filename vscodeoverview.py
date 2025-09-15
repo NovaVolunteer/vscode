@@ -1,7 +1,11 @@
 # %%
-import pandas as pd
 import math
-import simple_math # Assuming simple_math.py is in the same directory
+import pandas as pd
+# import math
+# import simple_math # (Assuming simple_math.py is in the same directory)
+import plotly.express as px
+import numpy as np
+import statsmodels
 # %%
 # Small Python script example: Calculate the area of a circle
 
@@ -14,7 +18,6 @@ if __name__ == "__main__":
     print(f"Area of circle with radius {r}: {area_of_circle(r):.2f}")
 
 
-# %%
 # %% [markdown]
 # ## Overview
 # This notebook provides an overview of the Visual Studio Code (VSCode) interface, focusing on its key 
@@ -32,6 +35,31 @@ if __name__ == "__main__":
 # - **Editor Area**: The central part of the interface where files are opened and edited.
 # - **Status Bar**: Displays information about the current project and file, including branch name and errors.
 # - **Command Palette**: Accessed via `F1`, it allows users to execute commands quickly.
+
+# %%
+# Example: Scatter plot of hours of sleep vs GPA
+
+# Generate synthetic data showing positive correlation between sleep and GPA
+np.random.seed(42)
+sleep_hours = np.random.normal(loc=6.5, scale=1.0, size=100)
+sleep_hours = np.clip(sleep_hours, 4, 9)
+gpa = 2.0 + (sleep_hours - 4) * 0.5 + np.random.normal(0, 0.15, size=100)
+gpa = np.clip(gpa, 2.0, 4.0)
+
+df_sleep_gpa = pd.DataFrame({
+    "Sleep Hours": sleep_hours,
+    "GPA": gpa
+})
+
+fig = px.scatter(
+    df_sleep_gpa,
+    x="Sleep Hours",
+    y="GPA",
+    title="Relationship Between Hours of Sleep and GPA",
+    trendline="ols"
+)
+fig.show()
+
 
 # %% [markdown]
 # Overview of Python Packages
