@@ -1,7 +1,7 @@
 # %%
 import pandas as pd
 import math
-#import simple_math
+import simple_math # Assuming simple_math.py is in the same directory
 # %%
 # Small Python script example: Calculate the area of a circle
 
@@ -31,6 +31,7 @@ if __name__ == "__main__":
 # - **Activity Bar**: Located on the side, it provides access to different views like Explorer, Search, and Extensions.
 # - **Editor Area**: The central part of the interface where files are opened and edited.
 # - **Status Bar**: Displays information about the current project and file, including branch name and errors.
+# - **Command Palette**: Accessed via `F1`, it allows users to execute commands quickly.
 
 # %% [markdown]
 # Overview of Python Packages
@@ -53,23 +54,7 @@ if __name__ == "__main__":
 
 # Save the following code in a file named simple_math.py
 # simple_math.py
-def add(a, b):
-    """Return the sum of a and b."""
-    return a + b
 
-def subtract(a, b):
-    """Return the difference of a and b."""
-    return a - b
-
-def multiply(a, b):
-    """Return the product of a and b."""
-    return a * b
-
-def divide(a, b):
-    """Return the quotient of a and b."""
-    if b == 0:
-        raise ValueError("Cannot divide by zero.")
-    return a / b
 
 # %%
 # Example usage:
